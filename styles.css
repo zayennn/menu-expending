@@ -1,0 +1,81 @@
+:root {
+  --bg: #dde8f3;
+  --menu-bg: rgba(255, 255, 255, 0.7);
+  --border: rgba(0, 0, 0, 0.06);
+  --accent: #2563eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 16px;
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.menu {
+  padding: 1rem;
+  background: var(--menu-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  gap: 14px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 60px;
+  height: 50px;
+  border-radius: var(--radius);
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.link:hover,
+.link:focus-visible {
+  width: 150px;
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.link-icon {
+  font-family: "Material Symbols Rounded";
+  font-size: 26px;
+  margin-left: 16px;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.link:hover .link-icon {
+  transform: scale(1.1);
+}
+
+.link-title {
+  margin-left: 12px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity var(--transition), transform var(--transition);
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.link:hover .link-title,
+.link:focus-visible .link-title {
+  opacity: 1;
+  transform: translateX(0);
+}
